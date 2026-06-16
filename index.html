@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅行のしおり</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <header class="header">
+            <h1>✈️ 旅行のしおり</h1>
+            <p class="subtitle">あなたの旅を計画・記録</p>
+        </header>
+
+        <!-- メインコンテンツ -->
+        <main class="main">
+            <!-- 旅行情報入力フォーム -->
+            <section class="form-section">
+                <h2>旅行情報を入力</h2>
+                <form id="tripForm">
+                    <div class="form-group">
+                        <label for="tripName">旅行名</label>
+                        <input type="text" id="tripName" placeholder="例：京都の春休み旅行" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="startDate">開始日</label>
+                            <input type="date" id="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate">終了日</label>
+                            <input type="date" id="endDate" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destination">目的地</label>
+                        <input type="text" id="destination" placeholder="例：京都府、大阪府" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">旅行を追加</button>
+                </form>
+            </section>
+
+            <!-- 旅行一覧 -->
+            <section class="trips-section">
+                <h2>登録済みの旅行</h2>
+                <div id="tripsList" class="trips-list">
+                    <p class="empty-message">まだ旅行が登録されていません</p>
+                </div>
+            </section>
+
+            <!-- スケジュール詳細 -->
+            <section class="schedule-section" id="scheduleSection" style="display: none;">
+                <h2 id="scheduleTitle">スケジュール詳細</h2>
+                
+                <div class="schedule-input">
+                    <h3>日程を追加</h3>
+                    <form id="scheduleForm">
+                        <div class="form-group">
+                            <label for="scheduleDate">日付</label>
+                            <input type="date" id="scheduleDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="scheduleTime">時刻</label>
+                            <input type="time" id="scheduleTime">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="activity">アクティビティ</label>
+                            <input type="text" id="activity" placeholder="例：清水寺を訪問" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="memo">メモ</label>
+                            <textarea id="memo" placeholder="備考やメモを入力"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">日程を追加</button>
+                        <button type="button" class="btn btn-secondary" onclick="closeScheduleForm()">戻る</button>
+                    </form>
+                </div>
+
+                <div class="schedule-list" id="scheduleList"></div>
+            </section>
+        </main>
+
+        <!-- フッター -->
+        <footer class="footer">
+            <p>&copy; 2026 旅行のしおり | ローカル版</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
